@@ -121,7 +121,7 @@ svg {
     }
     .fontL {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.35);
-        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.35);
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.5);
     }
     .fontM {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1);
@@ -129,7 +129,7 @@ svg {
     }
     .fontS {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
-        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
     .splitHalfA, .splitHalfB {
         height: calc(100vh / 2);
@@ -197,7 +197,7 @@ svg {
 
 @media only screen and (min-width: 48rem) and (max-width: 72.5rem) {
     :root {
-        --gridWidth: 24;
+        --gridWidth: 46;
         --viewWidth: 100vw;
     }
     .fontL {
@@ -222,19 +222,19 @@ svg {
 
 @media only screen and (min-width: 72.5rem) {
     :root {
-        --gridWidth: 32;
+        --gridWidth: 44;
         --viewWidth: 100vw;
     }
     .fontL {
-        font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.5);
-        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.5);
+        font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.8);
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * 2);
     }
     .fontM {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1);
     }
     .fontS {
-        font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .5);
+        font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .45);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .5);
     }
     #imgInfo {
@@ -247,7 +247,7 @@ svg {
 
 @media only screen and (min-width: 72.5rem) and (min-aspect-ratio: 21/9) {
     :root {
-        --gridWidth: 64;
+        --gridWidth: 44;
         --viewWidth: 50vw;
         --margin: 25vw;
     }
@@ -320,7 +320,7 @@ svg {
 #asset_concrete_001 {
     background-image: url("../assets/asset_concrete_001.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: cover
 }
 #asset_concrete_002 {
     background-image: url("../assets/asset_concrete_002.png");
@@ -453,7 +453,7 @@ svg {
     background-repeat: no-repeat;
 }
 
-/* debug */
+/* debug *//*
 
 .debugX, .debugY {
     display: block;
