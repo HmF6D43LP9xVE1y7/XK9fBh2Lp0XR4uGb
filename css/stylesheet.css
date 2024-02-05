@@ -132,20 +132,16 @@ svg {
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
     .splitHalfA, .splitHalfB {
-        /*
         height: calc(100vh / 2);
-        */
         position: absolute;
         width: var(--viewWidth);
     }
-    /*
     .splitHalfA {
         bottom: 0;
     }
     .splitHalfB {
         top: 0;
     }
-    */
     .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
         position: relative;
         width: var(--viewWidth);
