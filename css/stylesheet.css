@@ -369,17 +369,17 @@ svg {
     background-size: cover
 }
 #asset_concrete_002 {
-    background-image: url("../assets/asset_concrete_002.png");
+    background-image: url("../assets/asset_concrete_002.jpg");
     background-position: center;
     background-size: cover;
 }
 #asset_concrete_003 {
-    background-image: url("../assets/asset_concrete_003.png");
+    background-image: url("../assets/asset_concrete_003.jpg");
     background-position: center;
     background-size: cover;
 }
 #asset_concrete_004 {
-    background-image: url("../assets/asset_concrete_004.png");
+    background-image: url("../assets/asset_concrete_004.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -443,7 +443,7 @@ svg {
 
 
 #asset_icons_000 {
-    background-image: url("../assets/asset_icons_000.png");
+    background-image: url("../assets/asset_icons_000.jpg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
