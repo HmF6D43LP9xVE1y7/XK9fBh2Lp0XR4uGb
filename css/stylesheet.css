@@ -132,15 +132,20 @@ svg {
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
     .splitHalfA, .splitHalfB {
+        /*
         height: calc(100vh / 2);
+        */
+        position: absolute;
         width: var(--viewWidth);
     }
+    /*
     .splitHalfA {
         bottom: 0;
     }
     .splitHalfB {
         top: 0;
     }
+    */
     .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
         position: relative;
         width: var(--viewWidth);
@@ -152,9 +157,20 @@ svg {
         height: calc(100vh / 2);
     }
     #imgInfo {
-        max-width: calc(var(--viewWidth) - 2rem);
+        max-width: calc(var(--viewWidth) - 8rem);
+        /*
         max-height: calc(50vh - 2rem);
+        */
     }
+
+
+
+                .transformToLeft {
+                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -2)) !important;
+                }
+                .info {
+                    width: calc(var(--viewWidth) - 1.25rem);
+                }
 }
 
 /* tablet and desktop */
@@ -216,6 +232,15 @@ svg {
         max-width: calc(50vw - 8rem);
         max-height: calc(100vh - 8rem);
     }
+
+
+
+                .transformToLeft {
+                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -1.5)) !important;
+                }
+                .info {
+                    width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 15.1);
+                }
 }
 
 /* desktop */
@@ -241,6 +266,15 @@ svg {
         max-width: calc(50vw - 16rem);
         max-height: calc(100vh - 16rem);
     }
+
+
+
+                .transformToLeft {
+                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -2)) !important;
+                }
+                .info {
+                    width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 10.1);
+                }
 }
 
 /* desktop ultrawide */
@@ -303,6 +337,18 @@ svg {
     .splitThreeC {
         bottom: 0;
     }
+
+
+
+                .transformToLeft {
+                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -1.5)) !important;
+                }
+                .info {
+                    width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 15.1);
+                }
+
+
+
     #imgInfo {
         max-width: calc(50vw - 8rem);
         max-height: calc(100vh - 8rem);
