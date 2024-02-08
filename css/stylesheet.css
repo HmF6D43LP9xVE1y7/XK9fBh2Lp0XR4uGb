@@ -132,15 +132,12 @@ svg {
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
     .splitHalfA, .splitHalfB {
+        /*
         height: calc(100vh / 2);
-        position: absolute;
+        */
+        position: relative;
         width: var(--viewWidth);
-    }
-    .splitHalfA {
-        bottom: 0;
-    }
-    .splitHalfB {
-        top: 0;
+        height: fit-content;
     }
     .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
         position: relative;
@@ -161,11 +158,27 @@ svg {
 
 
 
-                .transformToLeft {
-                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -2)) !important;
+                .transformToRight {
+                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * 2)) !important;
                 }
                 .info {
                     width: calc(var(--viewWidth) - 1.25rem);
+                }
+
+
+                .centered, #imgInfo {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    -webkit-transform: translate(-0%, -0%);
+                    -moz-transform: translate(-0%, -0%);
+                    -ms-transform: translate(-0%, -0%);
+                    -o-transform: translate(-0%, -0%);
+                    transform: translate(-0%, -0%);
+                }
+                .centered, #imgInfo {
+                    max-width: calc(100vw - 4rem);
+                    margin: 2rem;
                 }
 }
 
@@ -346,7 +359,7 @@ svg {
 
 
     #imgInfo {
-        max-width: calc(50vw - 8rem);
+        max-width: calc(25vw - 8rem);
         max-height: calc(100vh - 8rem);
     }
     /* add function that you're able to scroll on white edges aswell */
