@@ -269,7 +269,7 @@ svg {
 
 
 
-    .transformContent, .transformContents img {
+    .transformContent, .transformContent img {
         max-width: calc(50vw - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
     }
     .transformContent img {
