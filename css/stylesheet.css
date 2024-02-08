@@ -451,9 +451,9 @@ svg {
     background-size: cover;
 }
 #asset_cupcake_003 {
-   background-image: url("../assets/asset_cupcake_003.mp4");
-    background-position: center;
-    background-size: cover;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
 }
 
 
