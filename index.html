@@ -48,8 +48,70 @@
         -->
     </head>
     <body>
+        <!--
         <div class="debugX"></div>
         <div class="debugY"></div>
+        -->
+
+
+
+        <div class="splitContent">
+            <div class="transformContent">
+                <div class="fontL italic">
+                    CÉLINE
+                </div>
+                <div class="fontL italic marginLeft">
+                    LÖTSCHER
+                </div>
+                <br>
+                <div class="fontS marginLeft">
+                    I laid the foundation for my creative journey by studying photography. Through my prior experience  a model, I gained insights into the creative and visual world, which further
+fueled my passion for graphic design. Self-study and practical experience in various
+companies deepened my skills.
+                </div>
+                <br>
+                <div class="fontS marginLeft">
+                    Painting, which has accompanied me since childhood, is not just a hobby, but an essential
+part of my life. This artistic passion flows seamlessly into my work and I combine my
+experience in photography, graphic design and painting to create a multi-layered
+understanding of visual aesthetics and expression.
+                </div>
+                <br>
+                <div class="fontS bold underline marginLeft" href="subpage/" onclick="menuOpen()">
+                    SEE WORK
+                </div>
+                <script>
+                    function menuOpen() {
+                        document.getElementsByTagName('*')[0].style.overflow = 'hidden';
+                        document.getElementsByClassName('splitContent')[0].style.display = 'none';
+                        document.getElementsByClassName('splitImage')[0].style.display = 'none';
+                        document.getElementsByClassName('menu')[0].style.display = 'block';
+                        document.getElementsByClassName('menu')[0].style.pointerEvents = 'all'
+                    }
+                    function menuClose() {
+                        document.getElementsByTagName('*')[0].style.overflow = 'visible';
+                        document.getElementsByClassName('menu')[0].style.display = 'none';
+                        document.getElementsByClassName('splitContent')[0].style.display = 'block';
+                        document.getElementsByClassName('splitImage')[0].style.display = 'block';
+                        document.getElementsByClassName('menu')[0].style.pointerEvents = 'none';
+                    }
+                </script>
+                <br>
+                <div class="fontS underline marginLeft">
+                    <a href="mailto:info@celineloetscher.ch">info@celineloetscher.ch</a>
+                    <br>
+                    <a href="https://www.instagram.com/celinelphotography/">@celinelphotography</a>
+                </div>
+            </div>
+        </div>
+        <div class="splitImage">
+            <div class="transformContent">
+                <img id="" src="assets/asset_info.jpg" alt="">
+            </div>
+        </div>
+
+<!--
+
         <div class="splitHalfB">
             <div class="centered info">
                 <div class="fontL italic transformToLeft">
@@ -67,7 +129,8 @@ Painting, which has accompanied me since childhood, is not just a hobby, but an 
 part of my life. This artistic passion flows seamlessly into my work and I combine my
 experience in photography, graphic design and painting to create a multi-layered
 understanding of visual aesthetics and expression.
-                    <!--
+
+
 
 I laid the foundation for my creative journey by<br>studying photography. Through my prior experience<br> a model, I gained insights into the creative and<br>visual world, which further
 fueled my passion for<br>graphic design. Self-study and practical experience<br>in various
@@ -77,36 +140,22 @@ part of my life.<br>This artistic passion flows seamlessly into my work and<br>I
 experience in photography, graphic design<br>and painting to create a multi-layered
 understanding<br>of visual aesthetics and expression.
 
-                    -->
                     <br>
                     <br>
                 </div>
                 <div class="fontS bold underline" href="subpage/" onclick="menuOpen()">SEE WORK</div>
-                    <script>
-                        function menuOpen() {
-                            document.getElementsByTagName('*')[0].style.overflow = 'hidden';
-                            document.getElementsByClassName('splitHalfA')[0].style.display = 'none';
-                            document.getElementsByClassName('splitHalfB')[0].style.display = 'none';
-                            document.getElementsByClassName('menu')[0].style.display = 'block';
-                            document.getElementsByClassName('menu')[0].style.pointerEvents = 'all'
-                        }
-                        function menuClose() {
-                            document.getElementsByTagName('*')[0].style.overflow = 'visible';
-                            document.getElementsByClassName('menu')[0].style.display = 'none';
-                            document.getElementsByClassName('splitHalfA')[0].style.display = 'block';
-                            document.getElementsByClassName('splitHalfB')[0].style.display = 'block';
-                            document.getElementsByClassName('menu')[0].style.pointerEvents = 'none';
-                        }
-                    </script>
+                    
                     <br>
-                    <a class="fontS underline" href="mailto:info@celineloetscher.ch">info@celineloetscher.ch</a><br>
-                    <a class="fontS underline" href="https://www.instagram.com/celinelphotography/">@celinelphotography</a>
+                    
                 </div>
             </div>
         </div>
         <div class="splitHalfA">
             <img id="imgInfo" src="assets/asset_info.jpg" alt="">
         </div>
+
+    -->
+
         <div class="menu" style="display: none; width: 100vw; height: 100vh; background-color: white; z-index: 1;">
             <div class="centered" style="text-align: center;">
                 <a class="fontS underline" href="concrete/">CONCRETE</a><br>

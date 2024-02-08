@@ -20,7 +20,7 @@
     text-align: left;
     text-transform: none;
     text-decoration: none;
-    vertical-align: baseline;
+    vertical-align: top;
     font-family: "bely", serif;
     /*
     hyphenate-character: ' -';
@@ -79,29 +79,19 @@ svg {
     background-size: cover !important;
     cursor: pointer !important;
 }
-
-
-
-            .scroller {
-                position: relative;
-                height: 100vh;
-                overflow-y: auto;
-                scroll-snap-type: both mandatory;
-                overscroll-behavior-x: contain;
-            }
-            .scroller .section {
-                position: relative;
-                height: 100vh;
-                scroll-snap-align: start;
-            }
-
-
-
-.splitHalfA, .splitHalfB {
-    position: absolute;
-    display: block;
+.scroller {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: both mandatory;
+    overscroll-behavior-x: contain;
 }
-.centered, #imgInfo {
+.scroller .section {
+    position: relative;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+.centered {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -114,10 +104,13 @@ svg {
 
 /* mobile */
 
-@media only screen and (max-width: 48rem) {
+@media only screen and (max-width: 767px) {
     :root {
         --gridWidth: 16;
         --viewWidth: 100vw;
+    }
+    br {
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
     .fontL {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.35);
@@ -131,99 +124,99 @@ svg {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .75);
     }
-    .splitHalfA, .splitHalfB {
-        /*
-        height: calc(100vh / 2);
-        */
+    .splitContent, .splitImage, .transformContent {
         position: relative;
-        width: var(--viewWidth);
-        height: fit-content;
+        -webkit-transform: translate(0%, 0%);
+        -moz-transform: translate(0%, 0%);
+        -ms-transform: translate(0%, 0%);
+        -o-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+        margin: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1) auto calc(calc(var(--viewWidth) / var(--gridWidth)) * 1) auto;
     }
-    .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
-        position: relative;
-        width: var(--viewWidth);
+    .transformContent, .transformContent img {
+        max-width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 14);
     }
-    .splitThreeA, .splitThreeB, .splitThreeC {
-        height: calc(100vh / 3);
-    }
-    .splitThreeD, .splitThreeE {
-        height: calc(100vh / 2);
-    }
-    #imgInfo {
-        max-width: calc(var(--viewWidth) - 8rem);
-        /*
-        max-height: calc(50vh - 2rem);
-        */
+    .marginLeft {
+        margin-left: calc(calc(var(--viewWidth) / var(--gridWidth)) * 2);
     }
 
 
 
-                .transformToRight {
-                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * 2)) !important;
-                }
-                .info {
-                    width: calc(var(--viewWidth) - 1.25rem);
-                }
-
-
-                .centered, #imgInfo {
+                .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
                     position: relative;
-                    top: 0;
-                    left: 0;
-                    -webkit-transform: translate(-0%, -0%);
-                    -moz-transform: translate(-0%, -0%);
-                    -ms-transform: translate(-0%, -0%);
-                    -o-transform: translate(-0%, -0%);
-                    transform: translate(-0%, -0%);
+                    width: var(--viewWidth);
                 }
-                .centered, #imgInfo {
-                    max-width: calc(100vw - 4rem);
-                    margin: 2rem;
+                .splitThreeA, .splitThreeB, .splitThreeC {
+                    height: calc(100vh / 3);
+                }
+                .splitThreeD, .splitThreeE {
+                    height: calc(100vh / 2);
+                }
+                #imgInfo {
+                    max-width: calc(var(--viewWidth) - 8rem);
+                    max-height: calc(50vh - 2rem);
                 }
 }
 
 /* tablet and desktop */
 
-@media only screen and (min-width: 48rem) {
-    .splitHalfA, .splitHalfB {
-        width: calc(var(--viewWidth) / 2);
-        height: 100vh;
-    }
-    .splitHalfA {
-        left: 0;
-    }
-    .splitHalfB {
-        right: 0;
-    }
-    .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeD {
+@media only screen and (min-width: 767px) {
+    .splitContent, .splitImage {
         position: absolute;
-        width: 50vw;
+        height: 100vh;
+        width: calc(var(--viewWidth) / 2);
     }
-    .splitThreeB, .splitThreeC {
+    .splitContent {
         right: 0;
-        height: calc(100vh / 2);
     }
-    .splitThreeD, .splitThreeE {
-        height: 100vh;
-    }
-    .splitThreeA {
+    .splitImage {
         left: 0;
-        height: 100vh;
     }
-    .splitThreeB {
-        top: 0;
+    .transformContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
-    .splitThreeC {
-        bottom: 0;
-    }
+    
+
+
+                .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeD {
+                    position: absolute;
+                    width: 50vw;
+                }
+                .splitThreeB, .splitThreeC {
+                    right: 0;
+                    height: calc(100vh / 2);
+                }
+                .splitThreeD, .splitThreeE {
+                    height: 100vh;
+                }
+                .splitThreeA {
+                    left: 0;
+                    height: 100vh;
+                }
+                .splitThreeB {
+                    top: 0;
+                }
+                .splitThreeC {
+                    bottom: 0;
+                }
 }
 
 /* tablet */
 
-@media only screen and (min-width: 48rem) and (max-width: 72.5rem) {
+@media only screen and (min-width: 767px) and (max-width: 72.5rem) {
     :root {
         --gridWidth: 46;
         --viewWidth: 100vw;
+    }
+    br {
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
     }
     .fontL {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.35);
@@ -237,19 +230,18 @@ svg {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
     }
-    #imgInfo {
-        max-width: calc(50vw - 8rem);
-        max-height: calc(100vh - 8rem);
+
+
+
+    .transformContent, .transformContent img {
+        max-width: calc(50vw - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
     }
-
-
-
-                .transformToLeft {
-                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -1.5)) !important;
-                }
-                .info {
-                    width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 15.1);
-                }
+    .transformContent img {
+        max-height: calc(100vh - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
+    }
+    .marginLeft {
+        margin-left: calc(calc(var(--viewWidth) / var(--gridWidth)) * 2);
+    }
 }
 
 /* desktop */
@@ -258,6 +250,9 @@ svg {
     :root {
         --gridWidth: 44;
         --viewWidth: 100vw;
+    }
+    br {
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .5);
     }
     .fontL {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * 1.8);
@@ -271,19 +266,18 @@ svg {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .45);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .5);
     }
-    #imgInfo {
-        max-width: calc(50vw - 16rem);
-        max-height: calc(100vh - 16rem);
+
+
+
+    .transformContent, .transformContents img {
+        max-width: calc(50vw - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
     }
-
-
-
-                .transformToLeft {
-                    transform: translateX(calc(calc(var(--viewWidth) / var(--gridWidth)) * -2)) !important;
-                }
-                .info {
-                    width: calc(calc(var(--viewWidth) / var(--gridWidth)) * 10.1);
-                }
+    .transformContent img {
+        max-height: calc(100vh - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
+    }
+    .marginLeft {
+        margin-left: calc(calc(var(--viewWidth) / var(--gridWidth)) * 2);
+    }
 }
 
 /* desktop ultrawide */
@@ -293,6 +287,9 @@ svg {
         --gridWidth: 44;
         --viewWidth: 50vw;
         --margin: 25vw;
+    }
+    br {
+        line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
     }
     body {
         width: 50vw;
@@ -310,42 +307,57 @@ svg {
         font-size: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
         line-height: calc(calc(var(--viewWidth) / var(--gridWidth)) * .675);
     }
-    .splitHalfA, .splitHalfB {
-        width: calc(var(--viewWidth) / 2);
-        height: 100vh;
-    }
-    .splitHalfA {
-        left: var(--margin);
-    }
-    .splitHalfB {
-        right: var(--margin);
-    }
-    .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
+
+
+    .splitContent, .splitImage {
         position: absolute;
-    }
-    .splitThreeB, .splitThreeC {
-        left: var(--margin);
-        height: calc(100vh / 2);
-        width: 25vw;
-    }
-
-
-
-    /* fix this shit */
-    .splitThreeD, .splitThreeE {
         height: 100vh;
-        width: var(--margin);
+        width: calc(var(--viewWidth) / 2);
     }
-    .splitThreeA {
-        height: 100vh;
-        width: var(--margin);
+    .splitContent {
+        right: calc(var(--viewWidth) / 2);
     }
-    .splitThreeB {
-        top: 0;
+    .splitImage {
+        left: calc(var(--viewWidth) / 2);
     }
-    .splitThreeC {
-        bottom: 0;
+    .transformContent, .transformContent img {
+        max-width: calc(var(--margin) - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
     }
+    .transformContent img {
+        max-height: calc(100vh - calc(calc(var(--viewWidth) / var(--gridWidth)) * 8));
+    }
+    .marginLeft {
+        margin-left: calc(calc(var(--viewWidth) / var(--gridWidth)) * 2);
+    }
+    
+
+    
+                .splitThreeA, .splitThreeB, .splitThreeC, .splitThreeD, .splitThreeE {
+                    position: absolute;
+                }
+                .splitThreeB, .splitThreeC {
+                    left: var(--margin);
+                    height: calc(100vh / 2);
+                    width: 25vw;
+                }
+
+
+
+                /* fix this shit */
+                .splitThreeD, .splitThreeE {
+                    height: 100vh;
+                    width: var(--margin);
+                }
+                .splitThreeA {
+                    height: 100vh;
+                    width: var(--margin);
+                }
+                .splitThreeB {
+                    top: 0;
+                }
+                .splitThreeC {
+                    bottom: 0;
+                }
 
 
 
@@ -357,11 +369,6 @@ svg {
                 }
 
 
-
-    #imgInfo {
-        max-width: calc(25vw - 8rem);
-        max-height: calc(100vh - 8rem);
-    }
     /* add function that you're able to scroll on white edges aswell */
 }
 
@@ -508,7 +515,7 @@ svg {
     background-repeat: no-repeat;
 }
 
-/* debug *//*
+/* debug */
 
 .debugX, .debugY {
     display: block;
